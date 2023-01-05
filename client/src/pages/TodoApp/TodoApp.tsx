@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import TodoList from "./TodoList";
 import TodoDetail from "./TodoDetail";
 import { Item } from "../../types/TodoList";
+import TodoEdit from "./TodoEdit";
 
 const items: Item[] = [
   {
@@ -41,6 +42,7 @@ function TodoApp() {
           element={<div>리스트에서 아이템을 선택해주세요.</div>}
         />
         <Route path=":id" element={<TodoDetail item={selectedItem} />} />
+        <Route path=":id/edit" element={<TodoEdit item={selectedItem} />} />
       </Routes>
     </>
   );
